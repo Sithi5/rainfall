@@ -3,20 +3,21 @@
 #include <string.h>
 
 
-char*	p(void)
+void	p(void)
 {
 	char str[76];
-	unsigned int *address;
+	unsigned int address;
 
 	fflush(stdout);
 	gets(str);
-	if (0xb0000000 == (*address & 0xb0000000))
+	if (0xb0000000 == (address & 0xb0000000))
 	{
 		printf("(%p)\n", address);
 		exit(1);
 	}
 	puts(str);
-	return(strdup(str));
+	strdup(str);
+	return;
 }
 
 

@@ -1,4 +1,4 @@
-On se connecte sur le level0, ou se trouve un **binaire** <code>level0</code>.
+On se connecte sur le level1, ou se trouve un **binaire** <code>level1</code>.
 
 On cherche a savoir ce que fait ce binaire:
 ```gdb
