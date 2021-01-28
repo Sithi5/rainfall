@@ -155,3 +155,4 @@ Pour savoir quel taille est atriuber le char* utilisé dans **get** on calcule a
 > 0x50 - 0x10 = 0x40 = 64
 
 Donc on a => <code>char* str[64];</code>
+
