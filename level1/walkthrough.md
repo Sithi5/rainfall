@@ -16,7 +16,7 @@ Reading symbols from /home/user/level0/level0...(no debugging symbols found)...d
    0x08048496 <+22>:    ret
 ```
 
-En regardant le code on se rend compte 
+En regardant les fonctions utlisées, on trouve :
 
 ```gdb
 (gdb) > info functions

