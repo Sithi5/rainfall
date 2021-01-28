@@ -1,9 +1,9 @@
-On se connecte sur le level5, ou se trouve un **binaire** <code>level4</code>.
+On se connecte sur le level5, ou se trouve un **binaire** <code>level5</code>.
 
 On cherche a savoir ce que fait ce binaire:
 ```gdb
-> gdb level4 -q
-Reading symbols from /home/user/level2/level2...(no debugging symbols found)...done.
+> gdb level5 -q
+Reading symbols from /home/user/level5/level5...(no debugging symbols found)...done.
 (gdb) > disas main
 Dump of assembler code for function main:
    0x08048504 <+0>:     push   %ebp

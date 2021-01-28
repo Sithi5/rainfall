@@ -3,7 +3,7 @@ On se connecte sur le level1, ou se trouve un **binaire** <code>level1</code>.
 On cherche a savoir ce que fait ce binaire:
 ```gdb
 > gdb level1 -q
-Reading symbols from /home/user/level0/level0...(no debugging symbols found)...done.
+Reading symbols from /home/user/level1/level1...(no debugging symbols found)...done.
 (gdb) > disas main
    0x08048480 <+0>:     push   %ebp
    0x08048481 <+1>:     mov    %esp,%ebp

@@ -3,7 +3,7 @@ On se connecte sur le level3, ou se trouve un **binaire** <code>level3</code>.
 On cherche a savoir ce que fait ce binaire:
 ```gdb
 > gdb level3 -q
-Reading symbols from /home/user/level2/level2...(no debugging symbols found)...done.
+Reading symbols from /home/user/level3/level3...(no debugging symbols found)...done.
 (gdb) > disas main
 Dump of assembler code for function main:
    0x0804851a <+0>:     push   %ebp
