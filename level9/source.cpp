@@ -2,23 +2,19 @@
 #include <stdio.h>
 #include <string.h>
 
-class A{
-	private:
-	unsigned int _n;
-	char *_str;
-
+class N{
 	public:
-	A(unsigned int n){
-		this->_n = n;
-	}
+
+	int n;
+	char str[108];
+
+	N(int n){ this->n = n; }
+	int operator+(N *param){ return (this->n + param->n); }
+	int operator-(N *param){ return (this->n - param->n); }
 
 	void setAnnotation(char *str){
-		memcpy(_str, str, strlen(str));
-	}
-
-	int operator+(A *param)
-	{
-		return this->_n + param->_n;
+		memcpy(this->str, str, strlen(str));
+		return;
 	}
 };
 
@@ -28,8 +24,8 @@ int main(int ac, char **av)
 	if (ac < 2) {
 		exit(1);
 	}
-	A *class_1 = new A(5);
-	A *class_2 = new A(6);
+	N *class_1 = new N(5);
+	N *class_2 = new N(6);
 	class_1->setAnnotation(av[1]);
 	class_2->operator+(class_1);
 	return (0);

