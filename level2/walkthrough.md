@@ -58,7 +58,7 @@ ou
    0x08048505 <+49>:    jne    0x8048527 <p+83>
 ```
 
-Nous allons donc faire un **buffer overflow** avec **shellcode**, et nous allons utliser un **POP POP RET** afin de bypasser la restriction.
+Nous allons donc faire un **buffer overflow** avec **rettolibc**, et nous allons utliser un **RET** afin de bypasser la restriction.
 
 On calcul l'**offset** qui va nous permettre de faire le **buffer overflow**:
 ```gdb
