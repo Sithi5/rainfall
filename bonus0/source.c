@@ -1,3 +1,7 @@
+#include <string.h>
+#include <unistd.h>
+#include <stdio.h>
+
 void p(char *str, char *s)
 {
 	char buffer[4104];
@@ -26,7 +30,7 @@ void pp(char *str)
 
 int main()
 {
-	char str[64];
+	char str[30];
 
 	pp(str);
 	puts(str);

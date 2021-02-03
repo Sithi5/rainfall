@@ -1,3 +1,8 @@
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+
 int language;
 
 void greetuser(char *str){
@@ -29,7 +34,7 @@ int main(int ac, char **av)
 	{
 		bzero(str, 19);
 		strncpy(str, av[1], 40);
-		strncpy(*(str + 40), av[2], 32);
+		strncpy(&str[40], av[2], 32);
 		var = getenv("LANG");
 		if (var)
 		{

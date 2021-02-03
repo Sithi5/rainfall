@@ -5,7 +5,7 @@ char *c[78];
 
 void	m(void)
 {
-	print("%s - %d\n", c, time(0));
+	printf("%s - %d\n", c, time(0));
 	return;
 }
 

