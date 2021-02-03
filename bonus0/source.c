@@ -13,8 +13,8 @@ void p(char *str, char *s)
 
 void pp(char *str)
 {
-	char str1[];
-	char str2[];
+	char str1[20];
+	char str2[20];
 	p(str1, " - ");
 	p(str2, " - ");
 	strcpy(str, str1);
