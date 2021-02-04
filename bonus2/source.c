@@ -8,17 +8,12 @@ int language;
 void greetuser(char *str){
 	char s[88];
 
-	if (language == 0){
+	if (language == 0)
 		strcpy(s, "Hello ");
-	}
 	else if (language == 1)
-	{
 		strcpy(s, "Hyvää päivää ");
-	}
 	else if (language == 2)
-	{
 		strcpy(s, "Goedemiddag! ");
-	}
 	strcat(s, str);
 	puts(s);
 	return;
@@ -34,7 +29,7 @@ int main(int ac, char **av)
 	{
 		bzero(str, 19);
 		strncpy(str, av[1], 40);
-		strncpy(&str[40], av[2], 32);
+		strncpy(str + 40, av[2], 32);
 		var = getenv("LANG");
 		if (var)
 		{
