@@ -1,24 +1,27 @@
-#include <stdlib.h>
-#include <unistd.h>
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
 
-int	main(int argc, char **argv)
+int main(int ac, char **av)
 {
-	if (atoi(argv[1]) == 423)
-	{
-		char *args[2];
-		args[0] = strdup("/bin/sh");
-		args[1] = 0;
-		printf("%s\n", args[0]);
-		int gid = getegid();
-		int uid = geteuid();
-		setresgid(gid, gid, gid);
-		setresuid(uid, uid, uid);
-		int ret = execv("/bin/sh", args);
-		printf("%d\n", ret);
-	}
-	else
-		fwrite("No !\n", 1, 5, stderr);
-	return (0);
+    char *str[2];
+    gid_t gid;
+    uid_t uid;
+
+    if (423 == atoi(av[1]))
+    {
+        str[0] = strdup("/bin/sh");
+        str[1] = 0;
+        gid = getegid();
+        uid = geteuid();
+        setresgid(gid, gid, gid);
+        setresuid(uid, uid, uid);
+        execv("/bin/sh", str)
+    }
+    else
+    {
+        fwrite("No !\n", 1, 5, stderr);
+    }
+    return 0;
 }
