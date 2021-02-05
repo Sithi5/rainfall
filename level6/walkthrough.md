@@ -119,5 +119,5 @@ f73dcb7a06f60e3ccc608990b0a046359d42a1a0489ffeefd0d9cb2d7c9cb82d
 </code></pre>
 
 For download :
-<pre><code>scp -P4242 level6@192.168.1.78:level6 .</code></pre>
+<pre><code>scp -P4242 level6@IP:level6 .</code></pre>
 > Password : d3b7bf1025225bd715fa8ccb54ef06ca70b9125ac855aeab4878217177f41a31

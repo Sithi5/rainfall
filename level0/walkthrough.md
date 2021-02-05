@@ -68,5 +68,5 @@ On lance donc le binaire avec **423** et on recupere le flag:
 </code></pre>
 
 For download :
-<pre><code>scp -P4242 level0@192.168.1.78:level0 .</code></pre>
+<pre><code>scp -P4242 level0@IP:level0 .</code></pre>
 > Password : level0

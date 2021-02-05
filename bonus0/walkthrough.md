@@ -164,7 +164,7 @@ cd1f77a585965341c37a1774a1d1686326e1fc53aaa5459c840409d4d06523c9
 ```
 
 For download :
-<pre><code>scp -P4242 bonus0@192.168.1.78:bonus0 .</code></pre>
+<pre><code>scp -P4242 bonus0@IP:bonus0 .</code></pre>
 > Password : f3f0004b6f364cb5a4147e9ef827fa922a4861408845c26b6971ad770d906728
 
 

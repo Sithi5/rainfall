@@ -91,5 +91,5 @@ Donc en mettant une simple chaine vide, on mets un 0 au debut de **str** et on c
 </code></pre>
 
 For download :
-<pre><code>scp -P4242 bonus3@192.168.1.78:bonus3 .</code></pre>
+<pre><code>scp -P4242 bonus3@IP:bonus3 .</code></pre>
 > Password : 71d449df0f960b36e0055eb58c14d0f5d0ddc0b35328d657f91cf0df15910587

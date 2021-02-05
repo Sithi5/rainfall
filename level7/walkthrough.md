@@ -166,5 +166,5 @@ Pour exploiter cette faille, on utilise la commande
 > Offset + Adresse de puts + Adresse de m
 
 For download :
-<pre><code>scp -P4242 level7@192.168.1.78:level7 .</code></pre>
+<pre><code>scp -P4242 level7@IP:level7 .</code></pre>
 > Password : f73dcb7a06f60e3ccc608990b0a046359d42a1a0489ffeefd0d9cb2d7c9cb82d

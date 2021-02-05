@@ -114,6 +114,6 @@ $ cd ../bonus2 && cat .pass
 
 
 For download :
-<pre><code>scp -P4242 bonus1@192.168.1.78:bonus1 .</code></pre>
+<pre><code>scp -P4242 bonus1@IP:bonus1 .</code></pre>
 > Password : cd1f77a585965341c37a1774a1d1686326e1fc53aaa5459c840409d4d06523c9
 

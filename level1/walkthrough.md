@@ -143,7 +143,7 @@ Good... Wait what?
 </code></pre>
 
 For download :
-<pre><code>scp -P4242 level1@192.168.1.78:level1 .</code></pre>
+<pre><code>scp -P4242 level1@IP:level1 .</code></pre>
 > Password : 1fe8a524fa4bec01ca4ea2a869af2a02260d4a7d5fe7e7c24d8617e6dca12d3a
 
 # Explication bonus

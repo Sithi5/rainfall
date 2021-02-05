@@ -173,5 +173,5 @@ c542e581c5ba5162a85f767996e3247ed619ef6c6f7b76a59435545dc6259f8a
 </code></pre>
 
 For download :
-<pre><code>scp -P4242 level8@192.168.1.78:level8 .</code></pre>
+<pre><code>scp -P4242 level8@IP:level8 .</code></pre>
 > Password : 5684af5cb4c8679958be4abe6373147ab52d95768e047820bf382e44fa8d8fb9

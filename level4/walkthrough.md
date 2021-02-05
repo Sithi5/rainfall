@@ -92,5 +92,5 @@ On sait que l'on cherche 16930116 (0x1025544), donc il nous manque 16930112
 </code></pre>
 
 For download :
-<pre><code>scp -P4242 level4@192.168.1.78:level4 .</code></pre>
+<pre><code>scp -P4242 level4@IP:level4 .</code></pre>
 > Password : 492deb0e7d14c4b5695173cca843c4384fe52d0857c2b0718e1a521a4d33ec02

@@ -194,5 +194,5 @@ $1 = {<text variable, no debug info>} 0xb7d86060 <system>
 ```
 
 For download :
-<pre><code>scp -P4242 level9@192.168.1.78:level9 .</code></pre>
+<pre><code>scp -P4242 level9@IP:level9 .</code></pre>
 > Password : c542e581c5ba5162a85f767996e3247ed619ef6c6f7b76a59435545dc6259f8a

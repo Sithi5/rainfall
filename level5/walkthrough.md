@@ -212,5 +212,5 @@ d3b7bf1025225bd715fa8ccb54ef06ca70b9125ac855aeab4878217177f41a31
 </code></pre>
 
 For download :
-<pre><code>scp -P4242 level5@192.168.1.78:level5 .</code></pre>
+<pre><code>scp -P4242 level5@IP:level5 .</code></pre>
 > Password : 0f99ba5e9c446258a69b290407a6c60859e9c2d25b26575cafc9ae6d75e9456a
