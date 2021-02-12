@@ -32,20 +32,20 @@ you all along your career. Before asking for help, ask yourself if you have fact
 
 | Name | Link |
 |:---------:|:--------:|
-| level0 | [FR](https://github.com/ChokMania/rainfall/blob/master/level0/walkthrough.md) |
-| level1 | [FR](https://github.com/ChokMania/rainfall/blob/master/level1/walkthrough.md) |
-| level2 | [FR](https://github.com/ChokMania/rainfall/blob/master/level2/walkthrough.md) |
-| level3 | [FR](https://github.com/ChokMania/rainfall/blob/master/level3/walkthrough.md) |
-| level4 | [FR](https://github.com/ChokMania/rainfall/blob/master/level4/walkthrough.md) |
-| level5 | [FR](https://github.com/ChokMania/rainfall/blob/master/level5/walkthrough.md) |
-| level6 | [FR](https://github.com/ChokMania/rainfall/blob/master/level6/walkthrough.md) |
-| level7 | [FR](https://github.com/ChokMania/rainfall/blob/master/level7/walkthrough.md) |
-| level8 | [FR](https://github.com/ChokMania/rainfall/blob/master/level8/walkthrough.md) |
-| level8 | [FR](https://github.com/ChokMania/rainfall/blob/master/level9/walkthrough.md) |
-| bonus0 | [FR](https://github.com/ChokMania/rainfall/blob/master/bonus0/walkthrough.md) |
-| bonus1 | [FR](https://github.com/ChokMania/rainfall/blob/master/bonus1/walkthrough.md) |
-| bonus2 | [FR](https://github.com/ChokMania/rainfall/blob/master/bonus2/walkthrough.md) |
-| bonus3 | [FR](https://github.com/ChokMania/rainfall/blob/master/bonus3/walkthrough.md) |
+| level0 | [FR](https://github.com/Sithi5/rainfall/blob/master/level0/walkthrough.md) |
+| level1 | [FR](https://github.com/Sithi5/rainfall/blob/master/level1/walkthrough.md) |
+| level2 | [FR](https://github.com/Sithi5/rainfall/blob/master/level2/walkthrough.md) |
+| level3 | [FR](https://github.com/Sithi5/rainfall/blob/master/level3/walkthrough.md) |
+| level4 | [FR](https://github.com/Sithi5/rainfall/blob/master/level4/walkthrough.md) |
+| level5 | [FR](https://github.com/Sithi5/rainfall/blob/master/level5/walkthrough.md) |
+| level6 | [FR](https://github.com/Sithi5/rainfall/blob/master/level6/walkthrough.md) |
+| level7 | [FR](https://github.com/Sithi5/rainfall/blob/master/level7/walkthrough.md) |
+| level8 | [FR](https://github.com/Sithi5/rainfall/blob/master/level8/walkthrough.md) |
+| level8 | [FR](https://github.com/Sithi5/rainfall/blob/master/level9/walkthrough.md) |
+| bonus0 | [FR](https://github.com/Sithi5/rainfall/blob/master/bonus0/walkthrough.md) |
+| bonus1 | [FR](https://github.com/Sithi5/rainfall/blob/master/bonus1/walkthrough.md) |
+| bonus2 | [FR](https://github.com/Sithi5/rainfall/blob/master/bonus2/walkthrough.md) |
+| bonus3 | [FR](https://github.com/Sithi5/rainfall/blob/master/bonus3/walkthrough.md) |
 
 ## Authors
 
